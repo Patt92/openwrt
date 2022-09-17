@@ -1,4 +1,4 @@
-name: Build IPQ807x
+name: Build IPQ807x-orgmod
 on: [push]
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
 
             - name: Generate config for IPQ807x Generic
               run: |
-                echo "CONFIG_TARGET_ipq807x=y" > .config
+                echo "CONFIG_TARGET_ipq807x=y\n" > .config
                 echo "CONFIG_TARGET_ipq807x_generic=y\n" >> .config
                 echo "CONFIG_TARGET_MULTI_PROFILE=y\n" >> .config
                 echo "CONFIG_TARGET_ALL_PROFILES=y\n" >> .config
@@ -25,11 +25,37 @@ jobs:
                 echo "CONFIG_TARGET_ROOTFS_INITRAMFS=y\n" >> .config
                 echo "CONFIG_TARGET_INITRAMFS_COMPRESSION_ZSTD=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci=y\n" >> .config
-                echo "CONFIG_PACKAGE_wpad-basic-wolfssl=m\n" >> .config
-                echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
-                echo "CONFIG_WOLFSSL_HAS_CPU_CRYPTO=y\n" >> .config
+                echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y\n" >> .config
+                echo "CONFIG_PACKAGE_qca-ssdk-shell=y\n" >> .config
+                echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
+                echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_openvpn-openssl=y\n" >> .config
+                echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
+                # Apps
+                echo "CONFIG_PACKAGE_luci-app-easymesh=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-guest-wifi=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-ntpc=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-qos=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-ttyd=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-vlmcsd=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-wifischedule=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-openvpn-server=y\n" >> .config
+                # IPTV
+                echo "CONFIG_PACKAGE_luci-app-udpxy=y\n" >> .config
+                echo "CONFIG_PACKAGE_omcproxy=y\n" >> .config
+                echo "CONFIG_PACKAGE_bird1-ipv4=y\n" >> .config
+                echo "CONFIG_PACKAGE_bird1-ipv4-uci=y\n" >> .config
+                # Speedtest
+                echo "CONFIG_PACKAGE_speedtest-netperf=y\n" >> .config
+                # Extra protocol
+                echo "CONFIG_PACKAGE_luci-proto-wireguard=y\n" >> .config
                 make defconfig
-
             - name: Download package sources
               run: make download V=s
 
