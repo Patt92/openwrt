@@ -34,8 +34,11 @@ jobs:
                 echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
+                echo "CONFIG_PACKAGE_kmod-ipt-ipset=y\n" >> .config
                 # Apps
                 echo "CONFIG_PACKAGE_luci-app-easymesh=y\n" >> .config
+                echo "CONFIG_PACKAGE_nano=y\n" >> .config
+                echo "CONFIG_PACKAGE_ip6tables=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-guest-wifi=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-ntpc=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-qos=y\n" >> .config
