@@ -36,8 +36,10 @@ jobs:
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-ipt-ipset=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-ip6tables=y\n" >> .config
+                echo "CONFIG_PACKAGE_mwan3=y\n" >> .config
                 # Apps
                 echo "CONFIG_PACKAGE_luci-app-easymesh=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-app-mwan3=y\n" >> .config
                 echo "CONFIG_PACKAGE_nano=y\n" >> .config
                 echo "CONFIG_PACKAGE_ip6tables=y\n" >> .config
                 echo "CONFIG_PACKAGE_ip6tables-nft=y\n" >> .config
