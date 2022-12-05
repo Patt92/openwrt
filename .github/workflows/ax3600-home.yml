@@ -27,6 +27,9 @@ jobs:
                 echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y\n" >> .config
                 echo "CONFIG_PACKAGE_qca-ssdk-shell=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
+                echo "CONFIG_PACKAGE_libip4tc2=y\n" >> .config
+                echo "CONFIG_PACKAGE_libip6tc2=y\n" >> .config
+                echo "CONFIG_PACKAGE_nginx-ssl-util=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
                 echo "CONFIG_PACKAGE_kmod-sched-cake=y\n" >> .config 
                 echo "CONFIG_PACKAGE_kmod-fs-ext4=y\n" >> .config
