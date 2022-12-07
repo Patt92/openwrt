@@ -71,6 +71,7 @@ jobs:
                 echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
                 echo "CONFIG_PACKAGE_luci-app-openvpn-server=y\n" >> .config
                 echo "CONFIG_PACKAGE_dnsdist=y\n" >> .config
+                echo "CONFIG_PACKAGE_luci-mod-rpc=y\n" >> .config
                 # Nginx         
                 echo "CONFIG_PACKAGE_libip4tc2=y\n" >> .config
                 echo "CONFIG_PACKAGE_libip6tc2=y\n" >> .config
